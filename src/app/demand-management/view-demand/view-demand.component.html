@@ -1,0 +1,46 @@
+<div class="view-container" *ngIf="demand">
+  <div class="header">
+    <h2>{{ demand.role }} - {{ demand.accountName }}</h2>  
+    <button *ngIf="mode === 'view'"  mat-icon-button color="primary" (click)="goToEdit()" matTooltip="Edit Demand">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="info-section">
+    <div><strong>Demand ID:</strong> {{ demand.id }}</div>
+    <div><strong>Client:</strong> {{ demand.clientName }}</div>
+    <div><strong>Account:</strong> {{ demand.accountName }}</div>
+    <div><strong>Division:</strong> {{ demand.divisionName }}</div> 
+    <div><strong>Sub Division:</strong> {{ demand.subdivisionName }}</div>  
+    <div><strong>Status:</strong> {{ demand.demandStatus }}</div>
+    <div><strong>Priority:</strong> {{ demand.priority }}</div>
+    <div><strong>Location:</strong> {{ demand.location }}</div>
+    <div><strong>CreatedBy:</strong> {{ demand.createdBy }}</div> 
+    <div><strong>Created On:</strong> {{ demand.demandCreationDate | date: 'short' }}</div>
+    <div><strong>End Date :</strong> {{ demand.demandEndDate | date: 'short' }}</div>
+
+
+    <div><strong>Skillset:</strong> {{ demand.primarySkillset }}</div>
+    <div><strong>Role:</strong> {{ demand.role }}</div>
+    <div><strong>Role Level:</strong> {{ demand.roleLevel }}</div>
+    <div><strong>YOE:</strong> {{ demand.yoeMin }} - {{ demand.yoeMax }}</div>
+    <div><strong>Description:</strong> {{ demand.jobDescription }}</div>
+
+    <div><strong>Recruiter:</strong> {{ demand.recruiterName }} - {{ demand.recruiterEmail }}</div>
+    <div><strong>EyGdsTaSpoc:</strong> {{ demand.eyGdsTaSpoc }}</div>    
+    <div><strong>EyGdsEvaluationSpoc:</strong> {{ demand.eyGdsEvaluationSpoc }}</div>
+    <div><strong>EyGdsCompetencyHead:</strong> {{ demand.eyGdsCompetencyHead }}</div>
+    
+
+    <div><strong>Client Evaluation Spoc:</strong> {{ demand.clientEvaluationSpoc }}</div>
+    <div><strong>Client Calibration Spoc:</strong> {{ demand.clientCalibrationSpoc }}</div>
+    <div><strong>Client Hiring Manager:</strong> {{ demand.clientHiringManagerName }} - {{ demand.clientHiringManagerEmail }}</div>
+
+  </div>
+</div>
+
+<div *ngIf="!demand" class="no-data">
+  <p>Demand not found.</p>
+</div>

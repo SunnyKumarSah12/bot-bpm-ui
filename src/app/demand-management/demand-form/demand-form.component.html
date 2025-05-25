@@ -1,0 +1,258 @@
+<mat-stepper #stepper>
+  <mat-step [stepControl]="generalInfoForm">
+    <form [formGroup]="generalInfoForm">
+      <ng-template matStepLabel>General</ng-template>
+      <mat-grid-list cols="4" rowHeight="60px" gutterSize="16px" style="margin-top: 13px;">
+        <!-- Client Name -->
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Client</mat-label>
+            <input matInput formControlName="clientName" />
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- Department Name -->
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Account</mat-label>
+            <input matInput formControlName="accountName" />
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- Project Name -->
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Division</mat-label>
+            <input matInput formControlName="divisionName" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Sub Division</mat-label>
+            <input matInput formControlName="subdivisionName" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Skillset</mat-label>
+            <input matInput formControlName="primarySkillset" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1">
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Location</mat-label>
+            <input matInput formControlName="location" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Priority</mat-label>
+            <mat-select formControlName="priority">
+              <mat-option value="High">High</mat-option>
+              <mat-option value="Medium">Medium</mat-option>
+              <mat-option value="Low">Low</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="demandStatus">
+              <mat-option value="Open">Open</mat-option>
+              <mat-option value="In-Progress">In-Progress</mat-option>
+              <mat-option value="Close">Close</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Demand Creation Date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="demandCreationDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Demand End Date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="demandEndDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Shift Start Time</mat-label>
+            <input matInput type="time" formControlName="shiftStartTime" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Shift End Time</mat-label>
+            <input matInput type="time" formControlName="shiftEndTime" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Aging Days</mat-label>
+            <input matInput type="number" formControlName="agingDays" />
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+      <div class="mt-4">
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step 2: Role & Job Description Info -->
+  <mat-step [stepControl]="roleAndJobDescriptionForm">
+    <form [formGroup]="roleAndJobDescriptionForm">
+      <ng-template matStepLabel>Role & Job Description</ng-template>
+      <mat-grid-list cols="4" rowHeight="60px" gutterSize="16px" style="margin-top: 13px;">
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Role</mat-label>
+            <input matInput formControlName="role" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Role Level</mat-label>
+            <mat-select formControlName="roleLevel" (selectionChange)="onRoleLevelChange($event.value)" required>
+              <mat-option *ngFor="let level of roleLevels" [value]="level">{{ level.value }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Min Experience</mat-label>
+            <input matInput type="number" formControlName="yoeMin" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Max Experience</mat-label>
+            <input matInput type="number" formControlName="yoeMax" />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Job Description</mat-label>
+            <textarea matInput rows="5" formControlName="jobDescription" required></textarea>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Calibration Input</mat-label>
+            <textarea matInput rows="5" formControlName="calibrationInput" required></textarea>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div class="mt-4">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step 3: EY GDS Contact -->
+  <mat-step [stepControl]="eyGdsContactForm">
+    <form [formGroup]="eyGdsContactForm">
+      <ng-template matStepLabel>EY GDS Contact</ng-template>
+      <mat-grid-list cols="4" rowHeight="60px" gutterSize="16px" style="margin-top: 13px;">
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>EY GDS TA SPOC</mat-label>
+            <mat-select formControlName="eyGdsTaSpoc">
+              <mat-option *ngFor="let opt of taSpocOptions" [value]="opt.email">
+                {{ opt.name }} ({{ opt.email }})
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>EY GDS Evaluation SPOC</mat-label>
+            <mat-select formControlName="eyGdsEvaluationSpoc">
+              <mat-option *ngFor="let opt of evaluationSpocOptions" [value]="opt.email">
+                {{ opt.name }} ({{ opt.email }})
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>EY GDS Competency Head</mat-label>
+            <mat-select formControlName="eyGdsCompetencyHead">
+              <mat-option *ngFor="let opt of competencyHeadOptions" [value]="opt.email">
+                {{ opt.name }} ({{ opt.email }})
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div class="mt-4">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Step 4: Client Contact -->
+  <mat-step [stepControl]="clientContactForm">
+    <form [formGroup]="clientContactForm">
+      <ng-template matStepLabel>Client Contacts</ng-template>
+      <mat-grid-list cols="4" rowHeight="60px" gutterSize="16px" style="margin-top: 13px;">
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Client Evaluation SPOC</mat-label>
+            <mat-select formControlName="clientEvaluationSpoc">
+              <mat-option *ngFor="let opt of clientEvaluationSpocOptions" [value]="opt.email">
+                {{ opt.name }} ({{ opt.email }})
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Client Calibration SPOC</mat-label>
+            <mat-select formControlName="clientCalibrationSpoc">
+              <mat-option *ngFor="let opt of clientCalibrationSpocOptions" [value]="opt.email">
+                {{ opt.name }} ({{ opt.email }})
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Client Hiring Manager Name</mat-label>
+            <input matInput formControlName="clientHiringManagerName" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Client Hiring Manager Email</mat-label>
+            <input matInput formControlName="clientHiringManagerEmail" />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <div class="mt-4">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Review & Submit</ng-template>
+    <app-view-demand [demandData]="getCombinedFormData()" [mode]="mode"></app-view-demand>
+    <div class="actions">
+      <button mat-raised-button matStepperPrevious>Back</button>
+      <button mat-raised-button color="primary" [disabled]="!isFormValid()" (click)="onSubmit()">Submit</button>
+    </div>
+  </mat-step>
+</mat-stepper>
