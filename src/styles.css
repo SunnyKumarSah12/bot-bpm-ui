@@ -11,6 +11,14 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+body {
+    background-image: url('assets/dtcc-background.jpg'); /* Use your actual file name */
+    background-size: cover;        /* Cover the whole area */
+    background-repeat: no-repeat;  /* Prevent tiling */
+    background-attachment: fixed;  /* Optional: fixed background */
+    background-position: center;   /* Center the image */
+  }
+
 
 /* styles.css */
 .app-container {
@@ -29,5 +37,5 @@ body {
 app-footer {
     background-color: #f1f1f1;
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
 }

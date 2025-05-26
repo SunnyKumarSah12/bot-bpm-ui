@@ -1,7 +1,15 @@
-<mat-toolbar color="primary">
-    <span class="brand">EY GDS TalentBridge</span>
-    <span class="spacer"></span>
+<mat-toolbar color="primary" class="navbar">
+  <img src="assets/ey-logo.png" alt="EY Logo" class="ey-logo" />
+  <span class="brand">GDS TalentBridge</span>
+  <div>
     <a mat-button routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
-    <a mat-button routerLink="/demand" routerLinkActive="active-link">Demand Management</a>
-  </mat-toolbar>
-  
+    <a mat-button routerLink="/demand" routerLinkActive="active-link">Demand Management</a>  
+  </div>
+
+  <span class="spacer"></span>
+  <span class="navbar-username">Hello, {{ username }}</span>
+
+  <button mat-button (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
