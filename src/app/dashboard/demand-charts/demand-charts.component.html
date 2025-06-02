@@ -12,3 +12,45 @@
         <canvasjs-chart [options]="demandTrendChartOptions" style="height: 300px; width: 50%;"></canvasjs-chart>
     </div>
 </div>
+<!-- 
+<ngx-graph
+  class="chart-container"
+  [view]="[800, 600]"
+  [links]="links"
+  [nodes]="nodes"
+  [layout]="'dagre'"
+  [draggingEnabled]="true"
+  [panOnZoom]="true"
+  [autoCenter]="true"
+  [autoZoom]="true"
+  [curve]="curve">
+  
+  <ng-template #defsTemplate>
+    <svg:marker id="arrow" viewBox="0 -5 10 10" refX="20" refY="0" markerWidth="10" markerHeight="10" orient="auto">
+      <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+    </svg:marker>
+  </ng-template>
+
+  <ng-template #nodeTemplate let-node>
+    <svg:g>
+      <svg:rect width="120" height="40" rx="5" ry="5" [attr.fill]="node.data.color || '#90caf9'" />
+      <svg:text x="60" y="25" text-anchor="middle" alignment-baseline="middle">{{ node.label }}</svg:text>
+    </svg:g>
+  </ng-template>
+
+</ngx-graph> -->
+
+<ngx-graph
+  class="chart-container"
+  [links]="links"
+  [nodes]="nodes"
+  [layout]="'dagre'"
+  [curve]="curve"
+>
+  <ng-template #nodeTemplate let-node>
+    <svg:g>
+      <svg:rect width="150" height="40" fill="#ffeb3b" rx="10" ry="10" />
+      <svg:text x="75" y="25" text-anchor="middle">{{ node.label }}</svg:text>
+    </svg:g>
+  </ng-template>
+</ngx-graph>

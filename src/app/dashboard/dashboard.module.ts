@@ -27,6 +27,8 @@ import { QuickLinksComponent } from './quick-links/quick-links.component';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     MatDatepickerModule,
     MatListModule,
     CanvasJSAngularChartsModule,
+    NgxGraphModule,
+    NgxChartsModule,
   ],
   providers: []
 })
