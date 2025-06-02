@@ -5,7 +5,7 @@
     <form (ngSubmit)="onAssign()">
         <mat-form-field appearance="fill">
             <mat-label>Assigned Person</mat-label>
-            <input matInput [(ngModel)]="assignedDemand.eyGdsTaSpoc" name="assignedPerson" required />
+            <input matInput [(ngModel)]="assignedDemand.eyTaSpoc" name="assignedPerson" required />
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -15,12 +15,12 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Competency Head</mat-label>
-            <input matInput [(ngModel)]="assignedDemand.eyGdsCompetencyHead" name="competencyHead" required />
+            <input matInput [(ngModel)]="assignedDemand.eyCompetencyHead" name="competencyHead" required />
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Hiring Manager</mat-label>
-            <input matInput [(ngModel)]="assignedDemand.clientHiringManagerName" name="hiringManager" required />
+            <input matInput [(ngModel)]="assignedDemand.clientHiringManager" name="hiringManager" required />
         </mat-form-field>
 
         <!-- Add other required fields if needed -->

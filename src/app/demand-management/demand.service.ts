@@ -3,39 +3,54 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 
 export interface Demand {
   id: number;
-  clientName: string;
-  accountName: string;
-  divisionName: string;
-  subdivisionName: string;
-  role: string;
-  roleLevel: string;
-  yoe: string;
-  yoeMin: number,
-  yoeMax: number,
-  agingPeriod: number;
-  primarySkillset: string;
-  jobDescription: string;
-  calibrationInput: string;
-  demandCreationDate: Date;
-  demandEndDate: Date;
-  isDemandActive: string;
-  isDemandExpired: string;
-  eyGdsTaSpoc: string;
-  eyGdsEvaluationSpoc: string;
-  eyGdsCompetencyHead: string;
-  clientEvaluationSpoc: string;
-  clientCalibrationSpoc: string;
-  clientHiringManagerName: string;
-  clientHiringManagerEmail: string;
-  location: string;
-  priority: string;
-  recruiterName: string;
-  recruiterEmail: string;
-  demandStatus: string;
-  createdBy: string;
-  shiftEndTime: string;
-  shiftStartTime: string;
-  shiftTime: string;
+  clientName?: string;
+  accountName?: string;
+  divisionName?: string;
+  subdivisionName?: string;
+  location?: string;
+  priority?: string;
+  recruiterName?: string;
+  recruiterEmail?: string;
+  demandStatus?: string;
+  createdBy?: string;
+  shiftEndTime?: string;
+  shiftStartTime?: string;
+  shiftTime?: string;
+  interviewDateTime?: string; // Optional field for interview date and time
+  interviewDate?: Date; // Optional field for interview date
+  interviewTime?: string; // Optional field for interview time, can be an array of strings
+  demandCreationDate?: Date;
+  demandEndDate?: Date;
+  isDemandActive?: string;
+  isDemandExpired?: string;
+  agingPeriod?: number;
+  
+  role?: string;
+  roleLevel?: string;
+  yoe?: string;
+  yoeMin?: number;
+  yoeMax?: number;
+  primarySkillset?: string;
+  secondarySkillset?: string;
+  jobDescription?: string;
+  calibrationInput?: string;
+
+  eyTaSpoc?: string;
+  eyTaSpocEmail?: string;
+  eyEvaluationSpoc?: string;
+  eyEvaluationSpocEmail?: string;
+  competency?: string;
+  eyCompetencyHead?: string;
+  eyCompetencyHeadEmail?: string;
+  
+
+  clientHiringManager?: string;
+  clientHiringManagerEmail?: string;
+  clientCalibrationSpoc?: string;
+  clientCalibrationSpocEmail?: string;
+  clientEvaluationSpoc?: string;
+  clientEvaluationSpocEmail?: string;
+
 }
 
 @Injectable({ providedIn: 'root' })
@@ -60,12 +75,13 @@ export class DemandService {
       demandEndDate: new Date('2025-01-30'),
       isDemandActive: 'Y',
       isDemandExpired: 'N',
-      eyGdsTaSpoc: '',
-      eyGdsEvaluationSpoc: '',
-      eyGdsCompetencyHead: '',
+      eyTaSpoc: '',
+      eyEvaluationSpoc: '',
+      competency: '',
+      eyCompetencyHead: '',
       clientEvaluationSpoc: '',
       clientCalibrationSpoc: '',
-      clientHiringManagerName: '',
+      clientHiringManager: '',
       clientHiringManagerEmail: '',
       location: 'New York',
       priority: 'High',
@@ -96,12 +112,13 @@ export class DemandService {
       demandEndDate: new Date('2025-02-15'),
       isDemandActive: 'Y',
       isDemandExpired: 'N',
-      eyGdsTaSpoc: '',
-      eyGdsEvaluationSpoc: '',
-      eyGdsCompetencyHead: '',
+      eyTaSpoc: '',
+      eyEvaluationSpoc: '',
+      competency: 'Python',
+      eyCompetencyHead: '',
       clientEvaluationSpoc: '',
       clientCalibrationSpoc: '',
-      clientHiringManagerName: '',
+      clientHiringManager: '',
       clientHiringManagerEmail: '',
       location: 'Chicago',
       priority: 'Medium',

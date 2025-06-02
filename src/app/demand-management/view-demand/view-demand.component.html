@@ -9,7 +9,7 @@
   <mat-divider></mat-divider>
 
   <div class="info-section">
-    <div><strong>Demand ID:</strong> {{ demand.id }}</div>
+    <div><strong>Demand ID:</strong> {{ demand.id || 'TBD' }}</div>
     <div><strong>Client:</strong> {{ demand.clientName }}</div>
     <div><strong>Account:</strong> {{ demand.accountName }}</div>
     <div><strong>Division:</strong> {{ demand.divisionName }}</div> 
@@ -20,23 +20,25 @@
     <div><strong>CreatedBy:</strong> {{ demand.createdBy }}</div> 
     <div><strong>Created On:</strong> {{ demand.demandCreationDate | date: 'short' }}</div>
     <div><strong>End Date :</strong> {{ demand.demandEndDate | date: 'short' }}</div>
+    <div><strong>Interview Date & Time:</strong> {{ demand.interviewDateTime | date: 'long' }}</div> 
 
-
-    <div><strong>Skillset:</strong> {{ demand.primarySkillset }}</div>
+    <div><strong>Primary Skillset:</strong> {{ demand.primarySkillset }}</div>
+    <div><strong>Secondary Skillset:</strong> {{ demand.secondarySkillset }}</div>
     <div><strong>Role:</strong> {{ demand.role }}</div>
     <div><strong>Role Level:</strong> {{ demand.roleLevel }}</div>
     <div><strong>YOE:</strong> {{ demand.yoeMin }} - {{ demand.yoeMax }}</div>
     <div><strong>Description:</strong> {{ demand.jobDescription }}</div>
+    <div><strong>CalibrationInput:</strong> {{ demand.calibrationInput }}</div>
 
     <div><strong>Recruiter:</strong> {{ demand.recruiterName }} - {{ demand.recruiterEmail }}</div>
-    <div><strong>EyGdsTaSpoc:</strong> {{ demand.eyGdsTaSpoc }}</div>    
-    <div><strong>EyGdsEvaluationSpoc:</strong> {{ demand.eyGdsEvaluationSpoc }}</div>
-    <div><strong>EyGdsCompetencyHead:</strong> {{ demand.eyGdsCompetencyHead }}</div>
+    <div><strong>Competency:</strong> {{ demand.competency }}</div>
+    <div><strong>EyCompetencyHead:</strong> {{ demand.eyCompetencyHead }} - {{ demand.eyCompetencyHeadEmail }}</div>
+    <div><strong>EyTaSpoc:</strong> {{ demand.eyTaSpoc }} - {{ demand.eyTaSpocEmail }}</div>
+    <div><strong>EyEvaluationSpoc:</strong> {{ demand.eyEvaluationSpoc }} - {{ demand.eyEvaluationSpocEmail }}</div>
     
-
-    <div><strong>Client Evaluation Spoc:</strong> {{ demand.clientEvaluationSpoc }}</div>
-    <div><strong>Client Calibration Spoc:</strong> {{ demand.clientCalibrationSpoc }}</div>
-    <div><strong>Client Hiring Manager:</strong> {{ demand.clientHiringManagerName }} - {{ demand.clientHiringManagerEmail }}</div>
+    <div><strong>Client Evaluation Spoc:</strong> {{ demand.clientEvaluationSpoc }} - {{ demand.clientEvaluationSpocEmail }}</div>
+    <div><strong>Client Calibration Spoc:</strong> {{ demand.clientCalibrationSpoc }} - {{ demand.clientCalibrationSpocEmail }}</div>
+    <div><strong>Client Hiring Manager:</strong> {{ demand.clientHiringManager }} - {{ demand.clientHiringManagerEmail }}</div>
 
   </div>
 </div>
