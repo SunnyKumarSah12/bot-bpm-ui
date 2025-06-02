@@ -12,20 +12,24 @@
   </div>
    -->
 
-   <div class="dashboard-layout">
-    <!-- KPI Cards Row -->
-    <div class="kpi-row">
-      <app-kpi-cards></app-kpi-cards>
-    </div>
-  
-    <!-- Lower Layout: Aging Table + Notifications -->
-    <div class="bottom-section">
-      <div class="aging-table">
-        <app-aging-table></app-aging-table>
-      </div>
-      <div class="notifications-box">
-        <app-notifications></app-notifications>
-      </div>
-    </div>
+<div class="dashboard-layout">
+  <!-- KPI Cards Row -->
+  <div class="kpi-row">
+    <app-kpi-cards></app-kpi-cards>
   </div>
-  
+
+  <!-- Lower Layout: Aging Table + Notifications -->
+  <div class="bottom-section">
+    <!-- <div class="aging-table">
+      <app-aging-table></app-aging-table>
+    </div> -->
+    <!-- <div class="notifications-box">
+        <app-notifications></app-notifications>
+      </div> -->
+
+    <div class="charts-box">
+      <app-demand-charts></app-demand-charts>
+    </div>
+
+  </div>
+</div>

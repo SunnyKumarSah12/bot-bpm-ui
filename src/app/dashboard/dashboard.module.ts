@@ -26,6 +26,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { QuickLinksComponent } from './quick-links/quick-links.component';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     MatGridListModule,
     MatDatepickerModule,
     MatListModule,
+    CanvasJSAngularChartsModule,
   ],
   providers: []
 })
