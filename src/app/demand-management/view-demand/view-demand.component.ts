@@ -12,6 +12,10 @@ export class ViewDemandComponent implements OnInit {
   @Input() mode: 'add' | 'edit' | 'view' = 'view';
   @Input() demandData: Demand | null = null;
 
+  currrentClient: string = 'DTCC'; // Default client, can be changed based on requirements
+
+  formLabels: any = {};
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -19,6 +23,7 @@ export class ViewDemandComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.formLabels = this.demandService.getLabelsForClient(this.currrentClient);
     const id = +this.route.snapshot.paramMap.get('id')!;
     this.demand = this.demandService.getDemandById(id);
     // If mode is not view, check if demandData is provided

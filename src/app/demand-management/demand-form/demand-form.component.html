@@ -14,7 +14,7 @@
         <!-- Department Name -->
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Account</mat-label>
+            <mat-label>{{ formLabels.accountName }}</mat-label>
             <input matInput formControlName="accountName" />
           </mat-form-field>
         </mat-grid-tile>
@@ -22,13 +22,13 @@
         <!-- Project Name -->
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Division</mat-label>
+            <mat-label>{{ formLabels.divisionName }}</mat-label>
             <input matInput formControlName="divisionName" />
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Sub Division</mat-label>
+            <mat-label>{{ formLabels.subdivisionName }}</mat-label>
             <input matInput formControlName="subdivisionName" />
           </mat-form-field>
         </mat-grid-tile>
@@ -239,11 +239,11 @@
   <!-- Step 4: Client Contact -->
   <mat-step [stepControl]="clientContactForm">
     <form [formGroup]="clientContactForm">
-      <ng-template matStepLabel>Client Contacts</ng-template>
+      <ng-template matStepLabel>{{ formLabels.clientName }} Contacts</ng-template>
       <mat-grid-list cols="4" rowHeight="60px" gutterSize="16px" style="margin-top: 13px;">
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Client Evaluation SPOC</mat-label>
+            <mat-label>{{ formLabels.clientEvaluationSpoc }}</mat-label>
             <mat-select formControlName="clientEvaluationSpocEmail" (selectionChange)="onClientEvaluationSpocChange($event.value)">
               <mat-option *ngFor="let opt of clientEvaluationSpocOptions" [value]="opt.email">
                 {{ opt.name }} ({{ opt.email }})
@@ -253,7 +253,7 @@
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Client Calibration SPOC</mat-label>
+            <mat-label>{{ formLabels.clientCalibrationSpoc }}</mat-label>
             <mat-select formControlName="clientCalibrationSpocEmail" (selectionChange)="onClientCalibrationSpocChange($event.value)">
               <mat-option *ngFor="let opt of clientCalibrationSpocOptions" [value]="opt.email">
                 {{ opt.name }} ({{ opt.email }})
@@ -263,13 +263,13 @@
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Client Hiring Manager Name</mat-label>
+            <mat-label>{{ formLabels.clientHiringManager }}</mat-label>
             <input matInput formControlName="clientHiringManager" />
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Client Hiring Manager Email</mat-label>
+            <mat-label>{{ formLabels.clientHiringManagerEmail }}</mat-label>
             <input matInput formControlName="clientHiringManagerEmail" />
           </mat-form-field>
         </mat-grid-tile>

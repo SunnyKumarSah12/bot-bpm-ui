@@ -13,6 +13,9 @@ export class DemandFormComponent implements OnInit {
   @Output() formSubmit = new EventEmitter<Demand>();
   @Input() demand: Demand | null = null;
 
+  currrentClient: string = 'DTCC'; // Default client, can be changed based on requirements
+
+  formLabels: any = {};
   generalInfoForm!: FormGroup;
   roleAndJobDescriptionForm!: FormGroup;
   eyContactForm!: FormGroup;
@@ -92,6 +95,8 @@ export class DemandFormComponent implements OnInit {
   ngOnInit() {
     this.initForm();
     this.loadDropdowns();
+    this.formLabels = this.demandService.getLabelsForClient(this.currrentClient);
+
     // Initialize form with existing demand data if in edit mode 
     if (this.mode === 'edit' && this.demand) {
       this.patchGeneralInfoForm(this.demand);

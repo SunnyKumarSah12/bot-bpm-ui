@@ -24,7 +24,7 @@ export interface Demand {
   isDemandActive?: string;
   isDemandExpired?: string;
   agingPeriod?: number;
-  
+
   role?: string;
   roleLevel?: string;
   yoe?: string;
@@ -42,7 +42,7 @@ export interface Demand {
   competency?: string;
   eyCompetencyHead?: string;
   eyCompetencyHeadEmail?: string;
-  
+
 
   clientHiringManager?: string;
   clientHiringManagerEmail?: string;
@@ -61,7 +61,7 @@ export class DemandService {
       clientName: 'Client A',
       accountName: 'Development',
       divisionName: 'Project X',
-      subdivisionName:'',
+      subdivisionName: '',
       role: 'Frontend Developer',
       roleLevel: '',
       yoe: '3-5',
@@ -233,4 +233,50 @@ export class DemandService {
     ]);
   }
 
+  CLIENT_LABEL_MAPS: { [key: string]: ClientLabelMap } = {
+    DTCC: {
+      clientName: 'DTCC',
+      accountName: 'IT Tower',
+      divisionName: 'Sub IT Tower',
+      subdivisionName: 'Sub Division',
+      clientHiringManager: 'DTCC Hiring Manager',
+      clientHiringManagerEmail: 'DTCC Hiring Manager Email',
+      clientCalibrationSpoc: 'DTCC Calibration Spoc',
+      clientCalibrationSpocEmail: 'DTCC Calibration Spoc Email',
+      clientEvaluationSpoc: 'DTCC Evaluation Spoc',
+      clientEvaluationSpocEmail: 'DTCC Evaluation Spoc Email',
+    },
+    Default: {
+      clientName: 'Client',
+      accountName: 'Account',
+      divisionName: 'Division',
+      subdivisionName: 'Sub Division',
+      clientHiringManager: 'Client Hiring Manager',
+      clientHiringManagerEmail: 'Client Hiring Manager Email',
+      clientCalibrationSpoc: 'Client Calibration Spoc',
+      clientCalibrationSpocEmail: 'Client Calibration Spoc Email',
+      clientEvaluationSpoc: 'Client Evaluation Spoc',
+      clientEvaluationSpocEmail: 'Client Evaluation Spoc Email',
+    }
+  };
+
+  getLabelsForClient(clientName: string): ClientLabelMap {
+    return this.CLIENT_LABEL_MAPS[clientName] || this.CLIENT_LABEL_MAPS['Default'];
+  }
+
+  
+
+}
+
+interface ClientLabelMap {
+  clientName: string;
+  accountName: string;
+  divisionName: string;
+  subdivisionName: string;
+  clientHiringManager: string;
+  clientHiringManagerEmail: string;
+  clientCalibrationSpoc: string;
+  clientCalibrationSpocEmail: string;
+  clientEvaluationSpoc: string;
+  clientEvaluationSpocEmail: string;
 }
