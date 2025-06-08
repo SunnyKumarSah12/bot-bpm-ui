@@ -159,22 +159,32 @@
             <input matInput formControlName="secondarySkillset" />
           </mat-form-field>
         </mat-grid-tile>
+        <div class="calibrationInput-div">
+          <mat-grid-tile colspan="2" rowspan="3">
+            <mat-form-field appearance="fill" class="w-full textarea-field">
+              <mat-label>Calibration Input</mat-label>
+              <textarea matInput formControlName="calibrationInput" required></textarea>
+            </mat-form-field>
+          </mat-grid-tile>
+        </div>
+
+        <mat-grid-tile colspan="2" rowspan="3">
+          <mat-form-field appearance="fill" class="w-full textarea-field">
+            <mat-label>Job Description</mat-label>
+            <textarea matInput formControlName="jobDescription" required></textarea>
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile colspan="2" rowspan="1" class="jd-upload-container" (drop)="onDrop($event)"
+          (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" [class.dragover]="isDragOver" (click)="triggerFileInput()">
+          <p>Drag and drop JD file here (txt, doc, docx) or click to upload</p>
+          <input type="file" id="uploadJD" (change)="onJDFileSelected($event)" accept=".txt,.doc,.docx" hidden />
+          <p *ngIf="uploadedFileName" style="margin-left: 2%;">Selected file: {{ uploadedFileName }}</p>
+        </mat-grid-tile>
+
       </mat-grid-list>
 
-      <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile>
-          <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Job Description</mat-label>
-            <textarea matInput rows="5" formControlName="jobDescription" required></textarea>
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Calibration Input</mat-label>
-            <textarea matInput rows="5" formControlName="calibrationInput" required></textarea>
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
       <div class="mt-4">
         <button mat-raised-button matStepperPrevious>Back</button>
         <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -244,7 +254,8 @@
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
             <mat-label>{{ formLabels.clientEvaluationSpoc }}</mat-label>
-            <mat-select formControlName="clientEvaluationSpocEmail" (selectionChange)="onClientEvaluationSpocChange($event.value)">
+            <mat-select formControlName="clientEvaluationSpocEmail"
+              (selectionChange)="onClientEvaluationSpocChange($event.value)">
               <mat-option *ngFor="let opt of clientEvaluationSpocOptions" [value]="opt.email">
                 {{ opt.name }} ({{ opt.email }})
               </mat-option>
@@ -254,7 +265,8 @@
         <mat-grid-tile>
           <mat-form-field appearance="fill" class="w-full">
             <mat-label>{{ formLabels.clientCalibrationSpoc }}</mat-label>
-            <mat-select formControlName="clientCalibrationSpocEmail" (selectionChange)="onClientCalibrationSpocChange($event.value)">
+            <mat-select formControlName="clientCalibrationSpocEmail"
+              (selectionChange)="onClientCalibrationSpocChange($event.value)">
               <mat-option *ngFor="let opt of clientCalibrationSpocOptions" [value]="opt.email">
                 {{ opt.name }} ({{ opt.email }})
               </mat-option>

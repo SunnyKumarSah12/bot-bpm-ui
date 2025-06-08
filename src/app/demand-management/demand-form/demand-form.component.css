@@ -5,6 +5,20 @@
     gap: 16px;
 }
 
-mat-form-field{
+mat-form-field {
     width: 100%;
+}
+
+.textarea-field textarea {
+    min-height: 165px;
+    resize: vertical;
+}
+
+.jd-upload-container {
+    border: 2px dashed #ccc;
+    padding: 0px;
+    text-align: center;
+    margin-top: -22px;
+    cursor: pointer;
+    margin-right: auto;
 }

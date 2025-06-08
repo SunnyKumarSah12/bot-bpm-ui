@@ -1,26 +1,87 @@
 .view-container {
-    padding: 16px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
-  
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .info-section {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  
-  .no-data {
-    padding: 20px;
-    text-align: center;
-    color: #888;
-  }
-  
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-section {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.no-data {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+}
+
+/* 
+  .jd-section {
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+} */
+
+.jd-scrollable-content {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-height: 450px;
+}
+
+.jd-text {
+  white-space: pre-line;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.download-button {
+  margin-top: 12px;
+}
+
+.button-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.edit-jd-button {
+  min-width: 32px;
+  padding: 0 8px;
+  font-size: 12px;
+  height: 28px;
+}
+
+.jd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  float: right;
+}
+
+.jd-textarea {
+  height: 200px;
+  max-height: 200px;
+  width: 100%;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.jd-edit-container {
+  width: 688px;
+}

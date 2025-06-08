@@ -1,5 +1,13 @@
 <div class="container" *ngIf="selectedDemand">
-    <h2>Edit Demand</h2>
+    <!-- Home Button -->
+    <div class="d-flex align-center mb-4" style="gap: 12px;">
+        <button mat-icon-button color="primary" aria-label="Home" matTooltip="Go to Demand List" style="margin-top: -1%;"
+            [routerLink]="['/demand']">
+            <mat-icon>home</mat-icon>
+        </button>
+        <h2>Edit Demand</h2>
+    </div>
+
 
     <ng-container *ngIf="selectedDemand; else loading">
         <app-demand-form [mode]="'edit'" [demand]="selectedDemand" (formSubmit)="onSubmit($event)">

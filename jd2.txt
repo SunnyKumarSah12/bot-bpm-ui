@@ -1,0 +1,82 @@
+Job Description: Front-End Developer (Angular / React.js)
+Position: Front-End Developer
+Location: [Remote / Onsite / Hybrid - City, Country]
+Experience: 2 – 7 years
+Employment Type: Full-Time
+
+About the Role
+We are seeking a skilled and passionate Front-End Developer with experience in modern JavaScript frameworks such as Angular and/or React.js. As a Front-End Developer, you will be responsible for building intuitive, responsive, and high-performance web interfaces that deliver exceptional user experiences.
+
+You will work closely with back-end developers, UI/UX designers, and product managers to translate business requirements and design specifications into interactive and dynamic front-end solutions.
+
+Key Responsibilities
+Design, develop, and maintain responsive user interfaces using Angular (v2+) and/or React.js.
+
+Convert wireframes and visual designs into interactive, high-quality front-end code.
+
+Build reusable components and front-end libraries for future use.
+
+Optimize applications for maximum speed and scalability across various devices and browsers.
+
+Integrate front-end code with RESTful APIs and backend services.
+
+Work with the UX team to ensure technical feasibility of designs.
+
+Write clean, maintainable, and well-documented code.
+
+Ensure cross-browser compatibility and adherence to accessibility standards (WCAG/ARIA).
+
+Participate in code reviews, performance tuning, and front-end architecture discussions.
+
+Collaborate in Agile teams, attend daily standups, sprint planning, and retrospectives.
+
+Stay up-to-date with the latest trends, tools, and technologies in front-end development.
+
+Required Skills and Qualifications
+Bachelor’s degree in Computer Science, Engineering, or a related field (or equivalent practical experience).
+
+2+ years of hands-on experience with Angular (2+), React.js, or both.
+
+Strong proficiency in JavaScript, TypeScript, HTML5, and CSS3.
+
+Experience with state management libraries like NgRx, Redux, Context API, or RxJS.
+
+Solid understanding of component-based architecture and front-end design patterns.
+
+Knowledge of responsive and adaptive design principles.
+
+Experience working with RESTful APIs and integrating with backend services.
+
+Familiarity with version control systems like Git.
+
+Experience with testing frameworks such as Jasmine, Karma, React Testing Library, or Jest.
+
+Ability to debug and troubleshoot performance and rendering issues.
+
+Strong attention to detail and user-centric mindset.
+
+Preferred Skills (Good to Have)
+Experience with Next.js or Angular Universal for SSR (server-side rendering).
+
+Familiarity with CI/CD tools and processes.
+
+Knowledge of UI libraries such as Material UI, Bootstrap, Tailwind CSS, or PrimeNG.
+
+Familiarity with GraphQL, WebSockets, or third-party integrations.
+
+Basic understanding of accessibility and SEO best practices.
+
+Exposure to design tools like Figma, Adobe XD, or Sketch.
+
+What We Offer
+Competitive salary with performance bonuses.
+
+Remote and flexible working options.
+
+A collaborative and innovative work culture.
+
+Career growth and skill development opportunities.
+
+Exposure to enterprise-level projects and modern tech stack.
+
+Join us if you’re passionate about crafting great user experiences and bringing designs to life with beautiful, efficient code.

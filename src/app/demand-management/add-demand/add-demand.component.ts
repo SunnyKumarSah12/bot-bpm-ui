@@ -22,4 +22,8 @@ export class AddDemandComponent {
     }
     this.router.navigate(['/demand']);
   }
+
+  goToDemandList(){
+     this.router.navigate(['/demand']);
+  }
 }

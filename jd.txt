@@ -1,0 +1,52 @@
+Job Description: Java Full Stack Developer
+Position: Java Full Stack Developer
+Location: Hyd
+Experience: 3 - 8 years
+Employment Type: Full-Time
+
+About the Role
+We are looking for a highly skilled Java Full Stack Developer to join our dynamic engineering team. You will be responsible for designing, developing, and maintaining both front-end and back-end components of web applications, ensuring seamless integration and high performance. The ideal candidate is proficient in Java technologies, modern front-end frameworks, and has a strong understanding of software development best practices.
+
+Key Responsibilities
+
+Develop, test, and maintain scalable and efficient web applications using Java and front-end technologies such as Angular, React, or Vue.js.
+Design and implement RESTful APIs and microservices using Spring Boot, Spring MVC, and related frameworks.
+Collaborate with product managers, UI/UX designers, and other developers to deliver high-quality solutions.
+Write clean, maintainable, and well-documented code following coding standards and best practices.
+Participate in code reviews, identify bottlenecks, and optimize application performance.
+Troubleshoot and debug issues across the full stack, ensuring robust application functionality.
+Implement responsive UI designs and ensure cross-browser compatibility.
+Work with relational and NoSQL databases like Oracle, MySQL, PostgreSQL, or MongoDB.
+Develop automated unit and integration tests to ensure software quality.
+Participate in Agile ceremonies including sprint planning, stand-ups, and retrospectives.
+Stay updated with the latest technology trends and propose improvements to existing systems.
+Assist with CI/CD pipelines and deployment automation using tools like Jenkins, Docker, or Kubernetes.
+Ensure application security by implementing best practices for authentication, authorization, and data protection.
+
+Required Skills and Qualifications
+
+Bachelor’s degree in Computer Science, Engineering, or a related field (or equivalent experience).
+Strong experience (3+ years) in Java and related frameworks (Spring Boot, Spring MVC, Hibernate/JPA).
+Proficiency in front-end development using Angular (2+), React, or Vue.js.
+Expertise in building and consuming RESTful web services and APIs.
+Solid understanding of HTML5, CSS3, JavaScript/TypeScript.
+Experience with relational databases (Oracle, MySQL, PostgreSQL) and writing complex SQL queries.
+Familiarity with NoSQL databases (MongoDB, Cassandra) is a plus.
+Knowledge of version control tools like Git.
+Understanding of software design patterns, OOP concepts, and SOLID principles.
+Experience working in Agile/Scrum development environments.
+Good problem-solving and analytical skills.
+Strong communication skills and ability to work collaboratively in a team.
+Experience with build and automation tools such as Maven or Gradle.
+Familiarity with containerization and orchestration tools (Docker, Kubernetes) is a plus.
+Knowledge of cloud platforms like AWS, Azure, or GCP is desirable but not mandatory.
+
+Preferred (Nice to Have)
+
+Experience with microservices architecture.
+Working knowledge of testing frameworks like JUnit, Mockito, Cypress, or Jasmine.
+Exposure to CI/CD pipelines and DevOps practices.
+Familiarity with message brokers such as Kafka, RabbitMQ.
+Experience with performance tuning and application monitoring tools.
+Understanding of security protocols such as OAuth2, JWT, and SAML.
+

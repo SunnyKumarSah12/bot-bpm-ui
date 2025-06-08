@@ -13,6 +13,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 
 import { DemandManagementRoutingModule } from './demand-management-routing.module';
@@ -31,6 +33,7 @@ import { ViewDemandComponent } from './view-demand/view-demand.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ConfirmDialogComponent } from '../shared/confirm-dialog/confirm-dialog.component';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { SourceProfileComponent } from './source-profile/source-profile.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     AssignDemandComponent,
     ViewDemandComponent,
     DemandFormComponent,
+    SourceProfileComponent,
     ConfirmDialogComponent
   ],
   imports: [
@@ -47,6 +51,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatTabsModule,
     MatDividerModule,
     MatTooltipModule,
     MatInputModule,

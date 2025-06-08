@@ -1,0 +1,30 @@
+.d-flex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-card-content {
+    padding: 16px;
+    margin-top: 5px;
+}
+
+.profile-card-footer {
+    padding: 16px;
+}
+
+.page-container {
+    padding: 20px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.profile-card {
+    height: 110%;
+    width: 104%;
+}

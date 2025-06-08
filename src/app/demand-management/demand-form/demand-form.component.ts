@@ -96,6 +96,12 @@ export class DemandFormComponent implements OnInit {
     this.initForm();
     this.loadDropdowns();
     this.formLabels = this.demandService.getLabelsForClient(this.currrentClient);
+    this.roleAndJobDescriptionForm.get('jobDescription')?.valueChanges.subscribe(value => {
+    // This code runs every time the 'jobDescription' value changes
+    if (!value || value.trim() === '') {
+      this.clearUploadedFile();
+    }
+  });
 
     // Initialize form with existing demand data if in edit mode 
     if (this.mode === 'edit' && this.demand) {
@@ -389,4 +395,78 @@ export class DemandFormComponent implements OnInit {
       clientHiringManagerEmail: this.clientContactForm.value.clientHiringManagerEmail || ''
     };
   }
+
+  isDragOver = false;
+  uploadedFileName: string | null = null;
+
+  triggerFileInput() {
+    const fileInput = document.getElementById('uploadJD') as HTMLInputElement;
+    if (fileInput) {
+      fileInput.click();
+    }
+  }
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+    this.isDragOver = true;
+  }
+
+  onDragLeave(event: DragEvent) {
+    event.preventDefault();
+    this.isDragOver = false;
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    this.isDragOver = false;
+
+    if (event.dataTransfer?.files && event.dataTransfer.files.length > 0) {
+      const file = event.dataTransfer.files[0];
+      this.handleFile(file);
+      event.dataTransfer.clearData();
+    }
+  }
+
+  onJDFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.handleFile(input.files[0]);
+    }
+  }
+
+  handleFile(file: File) {
+    this.uploadedFileName = file.name;
+
+    const allowedExtensions = ['txt', 'doc', 'docx'];
+    const fileExtension = file.name.split('.').pop()?.toLowerCase();
+
+    if (!fileExtension || !allowedExtensions.includes(fileExtension)) {
+      alert('Invalid file type! Please upload txt or Word files.');
+      this.uploadedFileName = null;
+      return;
+    }
+
+    if (fileExtension === 'txt') {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const fileContent = e.target.result;
+        // Set content to your jobDescription form control
+        this.roleAndJobDescriptionForm.patchValue({ jobDescription: fileContent });
+      };
+      reader.readAsText(file);
+    } else {
+      // For Word docs, you might want to upload file to backend or handle differently
+      // Just keep the file for upload - you can add file upload logic here if needed
+    }
+  }
+
+  clearUploadedFile(): void {
+    this.uploadedFileName = null;
+    this.roleAndJobDescriptionForm.patchValue({ jobDescription: '' });
+    // Also clear file input element
+    const fileInput = document.getElementById('uploadJD') as HTMLInputElement;
+    if (fileInput) {
+      fileInput.value = '';
+  }
+}
 }

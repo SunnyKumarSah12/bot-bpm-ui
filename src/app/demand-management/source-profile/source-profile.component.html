@@ -1,0 +1,28 @@
+<div class="page-container">
+    <!-- Home Button -->
+    <div class="d-flex align-center mb-4" style="gap: 12px;">
+        <button mat-icon-button color="primary" aria-label="Home" matTooltip="Go to Demand List" style="margin-top: -1%;"
+            [routerLink]="['/demand']">
+            <mat-icon>home</mat-icon>
+        </button>
+        <h2>Profiles for Competency: {{ competency }}</h2>
+    </div>
+    <div class="filter-section">
+        <!-- Add filters if needed -->
+    </div>
+
+    <div class="card-grid">
+        <mat-card class="profile-card" *ngFor="let profile of profiles">
+            <mat-card-header>
+                <mat-card-title>{{ profile.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content class="profile-card-content">
+                <p><strong>Experience:</strong> {{ profile.experience }} years</p>
+                <p><strong>Skills:</strong> {{ profile.skills }}</p>
+                <p><strong>Source:</strong> {{ profile.source }}</p>
+            </mat-card-content>
+            <button mat-button color="primary">View Full Profile</button>
+        </mat-card>
+    </div>
+</div>

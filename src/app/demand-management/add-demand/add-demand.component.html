@@ -1,15 +1,23 @@
 <div class="container">
-    <h2>Add New Demand</h2>
-  
-    <div class="d-flex align-center mb-3">
-      <mat-slide-toggle [(ngModel)]="isBulk" class="mr-3">Bulk Demand</mat-slide-toggle>
-  
-      <mat-form-field *ngIf="isBulk" appearance="fill" class="bulk-input">
-        <mat-label>Number of Demands</mat-label>
-        <input matInput type="number" [(ngModel)]="bulkCount" min="1" />
-      </mat-form-field>
-    </div>
-  
-    <app-demand-form [mode]="'add'" (formSubmit)="onSubmit($event)"></app-demand-form>
+  <h2>Add New Demand</h2>
+
+  <!-- Flex row with home button, toggle, and number input -->
+  <div class="d-flex align-center mb-4" style="gap: 12px;">
+    <!-- Home Button -->
+    <button mat-icon-button color="primary" aria-label="Home"  matTooltip="Go to Demand List" [routerLink]="['/demand']">
+      <mat-icon>home</mat-icon>
+    </button>
+
+    <!-- Toggle -->
+    <mat-slide-toggle [(ngModel)]="isBulk">Bulk Demand</mat-slide-toggle>
+
+    <!-- Number of Demands Input (Visible only if Bulk is enabled) -->
+    <mat-form-field *ngIf="isBulk" appearance="fill">
+      <mat-label>Number of Demands</mat-label>
+      <input matInput type="number" [(ngModel)]="bulkCount" min="1" />
+    </mat-form-field>
   </div>
-  
+
+  <!-- Demand Form -->
+  <app-demand-form [mode]="'add'" (formSubmit)="onSubmit($event)"></app-demand-form>
+</div>
