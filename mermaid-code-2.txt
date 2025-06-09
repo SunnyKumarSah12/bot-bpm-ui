@@ -1,0 +1,47 @@
+---
+config:
+  layout: fixed
+---
+flowchart TD
+ subgraph Users["User Roles"]
+        Recruiter["Recruiter"]
+        Manager["Hiring Manager"]
+        Admin["Admin"]
+  end
+ subgraph Frontend["Frontend (Angular)"]
+        UI["User Interface"]
+        Dashboard["Real-time Dashboard"]
+  end
+ subgraph Infrastructure["Infrastructure Services"]
+        Config["Config Server          (Centralized Configuration)"]
+        Discovery["Service Discovery          (Eureka Client)"]
+        Circuit["Circuit Breake (Resilience4j)"]
+  end
+ subgraph BusinessServices["Business Services"]
+        Service-2["MicroService-2"]
+        Service-1["MicroService-1"]
+  end
+ subgraph Backend["Backend Microservices (Spring Boot 3.2)"]
+        Gateway["API Gateway (Spring Cloud Gateway)- Rate Limiting - JWT Validation- Load Balancing"]
+        Infrastructure
+        BusinessServices
+  end
+ subgraph Data["Data Layer"]
+        DB["SQL/NoSQL"]
+        Redis["Redis Cache"]
+        Docs["Document Storage"]
+  end
+ subgraph Integrations["Integrations"]
+        Email["Email/SMS APIs"]
+        AI["Chatbots/AI-ML"]
+        SSO["SSO/LDAP"]
+  end
+    Users -- HTTPS/SPA --> Frontend
+    Frontend -- API Calls --> Gateway
+    Gateway -- Route Requests --> BusinessServices
+    BusinessServices -- JPA/Cache/Blob --> Data
+    Service-1 -- RestTemplate/FeignClient --> Service-2
+    Service-2 -- RestTemplate/FeignClient --> Service-1
+    Infrastructure --> Gateway & BusinessServices
+    Gateway --> Infrastructure
+    BusinessServices -- HTTPS --> Integrations
