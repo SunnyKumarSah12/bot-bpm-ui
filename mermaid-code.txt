@@ -1,0 +1,46 @@
+graph TD
+  %% ====================== LAYERS ======================
+  subgraph Users["User Roles"]
+    Recruiter[Recruiter]
+    Manager[Hiring Manager]
+    Admin[Admin]
+  end
+
+  subgraph Frontend["Frontend (Angular)"]
+    UI["User Interface"]
+    Dashboard["Real-time Dashboard"]
+  end
+
+  subgraph Backend["Backend (Spring Boot Microservices)"]
+    Gateway["API Gateway"]
+    Gateway["API Gateway (Spring Cloud Gateway) - Rate Limiting - JWT Validation\n- Load Balancing"]
+    Service-2["Service-2"]
+    Service-1["Service-1"]
+  end
+  
+  subgraph Data["Data Layer"]
+    DB["SQL/NoSQL "]
+    Redis["Redis Cache"]
+    Docs["Document Storage"]
+  end
+
+  subgraph Integrations["Integrations"]
+    Email["Email/SMS APIs"]
+    AI["Chatbots/AI-ML"]		
+    SSO["SSO/LDAP"]
+  end
+
+  %% ====================== WORKFLOWS ======================
+  Users -->|Access| Frontend
+  Frontend -->|API Calls| Gateway
+  Gateway -->|Route Requests| Service-1
+  Gateway -->|Route Requests| Service-2
+  Service-1 -->|JPA/Cache/Blob| Data
+  Service-2 -->|JPA/Cache/Blob| Data
+  
+  %% Core Workflow
+  Service-1 -->|"RestTemplate/FeignClient/WebClient"| Service-2
+
+  %% Integrations
+  Service-1--> Integrations
+  Service-2--> Integrations
