@@ -1,0 +1,22 @@
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.filter-field {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.filter-button {
+  margin-right: 8px;
+}
+
+.job-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

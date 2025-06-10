@@ -97,11 +97,11 @@ export class DemandFormComponent implements OnInit {
     this.loadDropdowns();
     this.formLabels = this.demandService.getLabelsForClient(this.currrentClient);
     this.roleAndJobDescriptionForm.get('jobDescription')?.valueChanges.subscribe(value => {
-    // This code runs every time the 'jobDescription' value changes
-    if (!value || value.trim() === '') {
-      this.clearUploadedFile();
-    }
-  });
+      // This code runs every time the 'jobDescription' value changes
+      if (!value || value.trim() === '') {
+        this.clearUploadedFile();
+      }
+    });
 
     // Initialize form with existing demand data if in edit mode 
     if (this.mode === 'edit' && this.demand) {
@@ -111,6 +111,9 @@ export class DemandFormComponent implements OnInit {
       this.patchClientContactForm(this.demand);
     }
   }
+
+  rtoOptions: string[] = ['Hybrid', 'WFO', 'WFH'];
+  shiftOptions: string[] = ['Yes', 'No', 'WeekendOnCall'];
 
   initForm() {
     console.log(this.demand);
@@ -131,6 +134,8 @@ export class DemandFormComponent implements OnInit {
       createdBy: [''],
       interviewDate: [new Date()],
       interviewTime: [''],
+      rtoStatus: ['', Validators.required],
+      rotationShifts: [[]], // default as empty array for multi-select
     });
 
     this.roleAndJobDescriptionForm = this.fb.group({
@@ -467,6 +472,6 @@ export class DemandFormComponent implements OnInit {
     const fileInput = document.getElementById('uploadJD') as HTMLInputElement;
     if (fileInput) {
       fileInput.value = '';
+    }
   }
-}
 }

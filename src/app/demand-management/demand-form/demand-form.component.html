@@ -108,6 +108,24 @@
             <input matInput type="time" formControlName="interviewTime" />
           </mat-form-field>
         </mat-grid-tile>
+        <!-- RTO Option -->
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>RTO</mat-label>
+            <mat-select formControlName="rtoStatus" required>
+              <mat-option *ngFor="let option of rtoOptions" [value]="option">{{ option }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <!-- Rotation Shift Options (multi-select) -->
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Rotation Shift</mat-label>
+            <mat-select formControlName="rotationShifts" multiple>
+              <mat-option *ngFor="let option of shiftOptions" [value]="option">{{ option }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
       </mat-grid-list>
       <div class="mt-4">
         <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -177,7 +195,8 @@
 
 
         <mat-grid-tile colspan="2" rowspan="1" class="jd-upload-container" (drop)="onDrop($event)"
-          (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" [class.dragover]="isDragOver" (click)="triggerFileInput()">
+          (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" [class.dragover]="isDragOver"
+          (click)="triggerFileInput()">
           <p>Drag and drop JD file here (txt, doc, docx) or click to upload</p>
           <input type="file" id="uploadJD" (change)="onJDFileSelected($event)" accept=".txt,.doc,.docx" hidden />
           <p *ngIf="uploadedFileName" style="margin-left: 2%;">Selected file: {{ uploadedFileName }}</p>

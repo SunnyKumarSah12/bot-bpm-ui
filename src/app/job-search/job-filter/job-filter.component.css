@@ -1,0 +1,21 @@
+.filter-toolbar {
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    /* Optional for small screens */
+}
+
+.filter-item {
+    min-width: 150px;
+    flex: 0 0 auto;
+}
+
+
+.chip-row {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+mat-chip {
+  margin: 4px;
+  background: #e0e0e0;
+}

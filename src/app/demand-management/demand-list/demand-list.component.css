@@ -21,3 +21,10 @@ mat-form-field {
 .center-header {
     text-align: center;
 }
+
+.custom-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: invert(0); /* Use invert(1) for white icons on dark background */
+}
