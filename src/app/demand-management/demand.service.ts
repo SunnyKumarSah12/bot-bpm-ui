@@ -264,7 +264,17 @@ export class DemandService {
     return this.CLIENT_LABEL_MAPS[clientName] || this.CLIENT_LABEL_MAPS['Default'];
   }
 
-  
+  private searchSelectedDemandSubject = new BehaviorSubject<Demand | null>(null);
+  searchSelectedDemandSubject$ = this.searchSelectedDemandSubject.asObservable();
+
+  setSearchSelectedDemandSubject(demand: Demand) {
+    this.searchSelectedDemandSubject.next(demand);
+  }
+
+  getSearchSelectedDemandSubject(): Demand | null {
+    return this.searchSelectedDemandSubject.getValue();
+  }
+
 
 }
 

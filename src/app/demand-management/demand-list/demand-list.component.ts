@@ -29,6 +29,14 @@ export class DemandListComponent implements OnInit {
     });
   }
 
+  goToSkillSearch(demand: Demand): void {
+    this.demandService.setSelectedDemand(demand);  // Set in BehaviorSubject
+
+    this.router.navigate(['/skill-search'], {
+      queryParams: { demandId: demand.id }   // Set in URL for reload/deeplink
+    });
+  }
+
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
     this.dataSource.filter = filterValue;

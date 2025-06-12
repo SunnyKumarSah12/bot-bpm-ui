@@ -1,0 +1,36 @@
+<!-- <mat-card class="demand-summary-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ selectedDemand.role }}</mat-card-title>
+    <mat-card-subtitle>{{ selectedDemand.primarySkillset }}</mat-card-subtitle>
+    <mat-card-actions align="end" class="demand-summary-actions">
+      <button mat-raised-button color="primary">
+        View
+      </button>
+    </mat-card-actions>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+
+  <div class="demand-summary-content">
+    <p><strong>Role Level:</strong> {{ selectedDemand.roleLevel }}</p>
+    <p><strong>Skill:</strong> {{ selectedDemand.primarySkillset }}</p>
+    <p><strong>Experience:</strong> {{ selectedDemand.yoeMin }} - {{ selectedDemand.yoeMax }} yrs</p>
+    <p><strong>Location:</strong> {{ selectedDemand.location }}</p>
+  </div>
+
+</mat-card> -->
+
+<div class="demand-summary-card">
+  <div class="summary-left">
+    <div class="summary-title">{{ selectedDemand.role }}</div>
+    <div class="summary-subtitle">{{ selectedDemand.primarySkillset }}</div>
+    <div class="summary-details">
+      <p><strong>Role Level:</strong> {{ selectedDemand.roleLevel }}</p>
+      <p><strong>Skill:</strong> {{ selectedDemand.primarySkillset }}</p>
+      <p><strong>Experience:</strong> {{ selectedDemand.yoeMin }} - {{ selectedDemand.yoeMax }} yrs</p>
+      <p><strong>Location:</strong> {{ selectedDemand.location }}</p>
+    </div>
+  </div>
+  <div class="summary-right">
+    <button mat-raised-button color="primary">View</button>
+  </div>
+</div>

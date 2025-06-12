@@ -1,0 +1,25 @@
+/* mat-form-field {
+    width: 100%;
+    margin-top: 28px;
+} */
+
+.demand-summary,
+.filter-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.button-row {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.filter-item {
+  font-size: 13px;
+  margin: 4px;
+  width: 100%;
+  height: 52px;
+  padding: 4px 0;
+}

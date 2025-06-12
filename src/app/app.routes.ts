@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -18,9 +17,9 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'job-search',
+    path: 'skill-search',
     loadChildren: () =>
-      import('./job-search/job-search.module').then(m => m.JobSearchModule),
+      import('./skill-search/skill-search.module').then(m => m.SkillSearchModule),
   },
   { path: '**', redirectTo: 'dashboard' },
 ];

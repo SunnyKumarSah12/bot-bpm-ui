@@ -1,0 +1,67 @@
+<div class="skill-search-container">
+  <mat-card>
+    <form [formGroup]="filterForm" (ngSubmit)="onSearch()" *ngIf="filterForm">
+      <mat-grid-list cols="8" rowHeight="60px" gutterSize="16px" style="margin-top: 13px;">
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="filter-item">
+            <mat-label>Skill</mat-label>
+            <mat-select formControlName="skill" multiple>
+              <!-- This mat-option is required to host the search input -->
+              <mat-option>
+                <ngx-mat-select-search [formControl]="skillSearchCtrl" placeholderLabel="Search skill..."
+                  noEntriesFoundLabel="'No matching skills'"></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let skill of filteredSkills | async" [value]="skill">
+                {{ skill }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="filter-item">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="roleLevel">
+              <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="filter-item">
+            <mat-label>Min YOE</mat-label>
+            <input matInput type="number" formControlName="yoeMin" />
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="filter-item">
+            <mat-label>Max YOE</mat-label>
+            <input matInput type="number" formControlName="yoeMax" />
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="filter-item">
+            <mat-label>Location</mat-label>
+            <input matInput formControlName="location" [matAutocomplete]="autoLoc" multiple />
+            <mat-autocomplete #autoLoc="matAutocomplete">
+              <mat-option *ngFor="let loc of locations" [value]="loc">{{ loc }}</mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+      </mat-grid-list>
+      <div class="mt-4 button-row">
+        <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+        <button mat-raised-button color="warn" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+
+  </mat-card>
+
+  <app-demand-summary *ngIf="selectedDemand" [selectedDemand]="selectedDemand"></app-demand-summary>
+</div>
+
+<!-- Next step: Display filtered profile list -->
+
+<app-profile-table [profiles]="profileResults"></app-profile-table>

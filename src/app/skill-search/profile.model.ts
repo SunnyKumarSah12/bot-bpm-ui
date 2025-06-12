@@ -1,0 +1,32 @@
+export interface Profile {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  noticePeriod: string;
+  skill: string;
+  skillSet: string[];
+  location: string;
+  role: string;
+  roleLevel: string;
+  availability: string;
+  rating: number;
+  experience: number;
+  yoeMin: number;
+  yoeMax: number;
+  primarySkillSet: string;
+  secondarySkillSet: string;
+  readyToRelocate: boolean;
+  currentCompany: string;
+  sourcedFrom: string;
+  createdBy: string;
+  updatedBy: string;
+  createdDate: Date;
+  updatedDate: Date;
+  profileStatus: string;
+  profileStatusReason: string;
+  remarks: string;
+  interviewStatus: string;
+  interviewStatusReason: string;
+  isActive: 'Y' | 'N';
+}

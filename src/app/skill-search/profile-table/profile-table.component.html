@@ -1,0 +1,42 @@
+<mat-card *ngIf="dataSource">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="skill">
+      <mat-header-cell *matHeaderCellDef>Skill</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.skill }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.location }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="experience">
+      <mat-header-cell *matHeaderCellDef>YOE</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.experience }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <mat-header-cell *matHeaderCellDef>Role</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.role }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="availability">
+      <mat-header-cell *matHeaderCellDef>Availability</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.availability }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="rating">
+      <mat-header-cell *matHeaderCellDef>Rating</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.rating }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</mat-card>
